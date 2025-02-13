@@ -108,5 +108,38 @@ namespace TriangleSolverTests
         }
 
 
+
+        // Three tests for verifying an invalid response (other than a zero length)
+        [Test]  //Test10
+        public void IdentifyTriangle_Invalid_NotFormingTriangle_ReturnsInvalid()
+        {
+            int side1 = 1;
+            int side2 = 2;
+            int side3 = 11;
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+            Assert.AreEqual("INVALID!!", result);
+        }
+
+        [Test]  //Test11
+        public void IdentifyTriangle_SumOfTwoSidesEqualsThird_ReturnsInvalid()
+        {
+            int side1 = 4;
+            int side2 = 4;
+            int side3 = 8;
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+            Assert.AreEqual("INVALID!!", result);
+        }
+
+        [Test]  //Test12
+        public void IdentifyTriangle_SumOfTwoSidesLessThanThird_ReturnsInvalid()
+        {
+            int side1 = 3;
+            int side2 = 3;
+            int side3 = 6;
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+            Assert.AreEqual("INVALID!!", result);
+        }
+
+
     }
 }
