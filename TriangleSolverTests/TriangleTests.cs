@@ -141,5 +141,39 @@ namespace TriangleSolverTests
         }
 
 
+
+        // Three tests for verifying a zero length for one or more sides
+        [Test]  //Test13
+        public void IdentifyTriangle_ZeroSide_ReturnsError()
+        {
+            int side1 = 0;
+            int side2 = 5;
+            int side3 = 8;
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+            Assert.AreEqual("Invalid Triangle - a zero has been detected", result);
+        }
+
+        [Test]  //Test14
+        public void IdentifyTriangle_ZeroAnotherSide_ReturnsError()
+        {
+            int side1 = 4;
+            int side2 = 0;
+            int side3 = 7;
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+            Assert.AreEqual("Invalid Triangle - a zero has been detected", result);
+        }
+
+        [Test]  //Test15
+
+
+        public void IdentifyTriangle_AllZeroSides_ReturnsError()
+        {
+            int side1 = 0;
+            int side2 = 0;
+            int side3 = 0;
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+            Assert.AreEqual("Invalid Triangle - a zero has been detected", result);
+        }
+
     }
 }
