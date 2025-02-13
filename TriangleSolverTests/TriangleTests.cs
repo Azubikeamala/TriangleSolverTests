@@ -76,6 +76,37 @@ namespace TriangleSolverTests
         }
 
 
+        // Three tests for valid isosceles triangles
+        [Test]  //Test7
+        public void IdentifyTriangle_Isosceles_TwoEqualSides_ReturnsIsosceles()
+        {
+            int side1 = 4;
+            int side2 = 4;
+            int side3 = 2;
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+            Assert.AreEqual("Isosceles triangle", result);
+        }
+
+        [Test]  //Test8
+        public void IdentifyTriangle_Isosceles_AnotherSet_ReturnsIsosceles()
+        {
+            int side1 = 7;
+            int side2 = 7;
+            int side3 = 5;
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+            Assert.AreEqual("Isosceles triangle", result);
+        }
+
+        [Test]  //Test9
+        public void IdentifyTriangle_ValidLargeIsosceles_ReturnsIsosceles()
+        {
+            int side1 = 100;
+            int side2 = 100;
+            int side3 = 50;
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+            Assert.AreEqual("Isosceles triangle", result);
+        }
+
 
     }
 }
